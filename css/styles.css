@@ -1,0 +1,28 @@
+header {
+    background-color: #8789AB;
+    padding: 1vw 2vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header img {
+    width: 4vw;
+    height: auto;
+}
+
+nav {
+    background-color: #8789AB;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
