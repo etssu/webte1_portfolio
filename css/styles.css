@@ -30,10 +30,11 @@
 }
 
 body {
-     margin: 0;
+    margin: 0;
     background-color: #BEE7E8;
     font-family: 'Nunito', Helvetica;
     font-weight: 500;
+    font-size: 18px;
 }
 
 header {
@@ -221,6 +222,81 @@ blockquote {
     border-radius: 50%;
 
     background-color: #53A2B0;
+}
+
+.image-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hotspot {
+    position: absolute;
+
+    background-color: transparent;
+    border: 3px solid var(--color-primary);
+    border-radius: var(--radius);
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.monitor-hotspot {
+    position: absolute;
+    left: 19%;
+    top: 20%;
+    width: 47%;
+    height: 41%;
+
+    background-color: rgba(83, 162, 176, 0.5);
+    border: 3px solid var(--color-secondary);
+
+    clip-path: polygon(
+        2% 12%,
+        100% 9%,
+        97% 87%,
+        9% 97%
+    );
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+    background-color: rgb(107 185 199 / 20%);
+    transform: scale(1.02);
+}
+
+.hotspot-panel {
+    position: absolute;
+
+    padding: 15px 20px;
+    background-color: var(--color-background);
+
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius);
+
+    box-shadow: 0 4px 12px rgb(31 29 54 / 20%);
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.monitor-hotspot:focus + .monitor-panel {
+    opacity: 1;
+    visibility: visible;
+}
+.monitor-hotspot:hover {
+    opacity: 0.7;
+}
+
+.monitor-hotspot:focus + .monitor-panel {
+    opacity: 1;
 }
 
 @media (max-width: 700px) {

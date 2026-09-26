@@ -1,0 +1,10 @@
+@media print {
+    nav {
+        display: none;
+    }
+
+    .cv-left,
+    .cv-right {
+        background: none;
+    }
+}
