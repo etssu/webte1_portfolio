@@ -30,6 +30,7 @@
 }
 
 body {
+     margin: 0;
     background-color: #BEE7E8;
     font-family: 'Nunito', Helvetica;
     font-weight: 500;
@@ -40,8 +41,17 @@ header {
     font-weight: 700;
 
     background-color: #6BB9C7;
-    padding: 1vw 2vw;
-    padding-right: 10%;
+    padding: 15px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
 
     display: flex;
     justify-content: space-between;
@@ -60,40 +70,59 @@ header img {
 }
 
 nav {
-    background-color: #6BB9C7;
+    background-color: #53A2B0;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 15px;
+    padding: 8px;
 
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 16px;
 }
 
 nav a {
-    color: #494573;
+    color: black;
     text-decoration: none;
+    padding: 6px 12px;       
+    border-radius: 12px;    
+    transition: all 0.25s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: #BEE7E8; 
+    color: #1F1D36;
+    text-decoration: none;
+    box-shadow: 0px 2px 5px black;
+}
+
+nav a.active {
+    background-color: #2D6A76;
+    color: #E1F4F4;
 }
 
 #about {
-    padding: 3%;
-    padding-left: 7%;
-    padding-right: 10%;
+    width: 86%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
     display: flex;
     gap: 7%;
+    align-items: flex-start;
+    padding: 2%;
 }
-
 
 #author {
     border-radius: 20px;
-    float: left;
+    width: 40%;
+    max-width: 500px;
+    height: auto;
+}
+
+.about-text {
+    max-width: 70ch;
 }
 
 blockquote {
