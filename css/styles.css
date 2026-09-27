@@ -1,3 +1,22 @@
+:root {
+    --color-primary: #53A2B0;
+    --color-secondary: #6BB9C7;
+    --color-accent: #95D9DA;
+
+    --color-text: #1F1D36;
+    --color-background: #BEE7E8;
+    --color-dark: #2D6A76;
+
+    --color-light: #F5FEFF;
+
+    --color-hotspot: rgb(83 162 176 / 50%);
+    --color-hotspot-hover: rgb(107 185 199 / 20%);
+
+    --radius: 15px;
+    --radius-image: 20px;
+    --space: 20px;
+}
+
 @font-face {
     font-family: 'Nunito';
     src: url('../fonts/Nunito-Regular.woff2') format('woff2');
@@ -41,7 +60,7 @@
 
 body {
     margin: 0;
-    background-color: #BEE7E8;
+    background-color: var(--color-background);
     font-family: 'Nunito', Helvetica;
     font-weight: 500;
     font-size: 18px;
@@ -51,7 +70,7 @@ header {
     font-family: 'Nunito', Helvetica;
     font-weight: 700;
 
-    background-color: #6BB9C7;
+    background-color: var(--color-secondary);
     padding: 15px 5%;
 
     display: flex;
@@ -81,7 +100,7 @@ header img {
 }
 
 nav {
-    background-color: #53A2B0;
+    background-color: var(--color-primary);
 }
 
 nav ul {
@@ -95,22 +114,22 @@ nav ul {
 }
 
 nav a {
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
     padding: 6px 12px;       
-    border-radius: 12px;    
+    border-radius: var(--radius);    
     transition: all 0.25s ease;
 }
 
 nav a:hover {
-    background-color: #BEE7E8; 
-    color: #1F1D36;
+    background-color: var(--color-background); 
+    color: var(--color-text);
     text-decoration: none;
-    box-shadow: 0px 2px 5px black;
+    box-shadow: 0px 2px 5px var(--color-text);
 }
 
 nav a.active {
-    background-color: #2D6A76;
+    background-color: var(--color-dark);
     color: #E1F4F4;
 }
 
@@ -126,7 +145,7 @@ nav a.active {
 }
 
 #author {
-    border-radius: 20px;
+    border-radius: var(--radius-image);
     width: 40%;
     max-width: 500px;
     height: auto;
@@ -137,11 +156,11 @@ nav a.active {
 }
 
 blockquote {
-    border-left: 5px solid #6BB9C7;
+    border-left: 5px solid var(--color-secondary);
     padding: 15px 20px;
     margin: 25px 0;
 
-    background-color: #95D9DA;
+    background-color: var(--color-accent);
     font-family: 'Nunito', Helvetica;
     font-style: italic;
 }
@@ -158,7 +177,7 @@ blockquote {
 }
 
 .cv-left {
-    background-color: #6BB9C7;
+    background-color: var(--color-secondary);
     padding: 35px;
 }
 
@@ -170,7 +189,7 @@ blockquote {
 .cv-left img {
     width: 100%;
     max-width: 220px;
-    border-radius: 15px;
+    border-radius: var(--radius-image);
     display: block;
     margin: 0 auto 35px;
 }
@@ -193,12 +212,12 @@ blockquote {
     align-items: center;
     gap: 8px;
 
-    color: #1F1D36;
+    color: var(--color-text);
     text-decoration: none;
 }
 
 .cv-left a {
-    color: #1F1D36;
+    color: var(--color-text);
 }
 
 .cv-right h1 {
@@ -206,7 +225,7 @@ blockquote {
 }
 
 .cv-right h2 {
-    color: #2D6A76;
+    color: var(--color-dark);
     margin-top: 35px;
 }
 
@@ -231,7 +250,7 @@ blockquote {
     height: 7px;
     border-radius: 50%;
 
-    background-color: #53A2B0;
+    background-color: var(--color-primary);
 }
 
 .image-container {
@@ -250,13 +269,14 @@ blockquote {
 .hotspot {
     position: absolute;
 
-    background-color: transparent;
+    background-color: var(--color-hotspot);
     border: 3px solid var(--color-primary);
     border-radius: var(--radius);
 
     cursor: pointer;
     transition: 0.2s ease;
 }
+
 .hotspot-panel::after {
     content: "";
 
@@ -267,51 +287,47 @@ blockquote {
     width: 16px;
     height: 16px;
 
-    background-color: #F5FEFF;
-    border-right: 2px solid #53A2B0;
-    border-bottom: 2px solid #53A2B0;
+    background-color: var(--color-light);
+    border-right: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
 
     transform: translateX(-50%) rotate(45deg);
 }
 
 .hotspot:hover,
 .hotspot:focus-visible { 
-    background-color: rgb(107 185 199 / 20%);
+    background-color: var(--color-hotspot-hover);
     transform: scale(1.02);
 }
 
 .hotspot-panel {
     position: absolute;
 
-    padding: 15px 20px;
-    background-color: var(--color-background);
+    padding: 12px 18px;
+    max-width: 280px;
 
+    background-color: var(--color-light);
     border: 2px solid var(--color-primary);
     border-radius: var(--radius);
 
-    box-shadow: 0 4px 12px rgb(31 29 54 / 20%);
+    box-shadow: 0 4px 12px rgb(31 29 54 / 15%);
 
     opacity: 0;
     visibility: hidden;
+
+    transition: opacity 0.2s ease;
 }
+
 .hotspot:hover + .hotspot-panel {
     opacity: 1;
     visibility: visible;
 }
 
-.hotspot:hover {
-    opacity: 0.7;
-}
-
 .monitor-hotspot {
-    position: absolute;
     left: 19%;
     top: 20%;
     width: 47%;
     height: 41%;
-
-    background-color: rgba(83, 162, 176, 0.5);
-    border: 3px solid #53A2B0;
 
     clip-path: polygon(
         2% 12%,
@@ -324,20 +340,6 @@ blockquote {
 .monitor-panel {
     left: 20%;
     bottom: 77%;
-    
-    padding: 12px 18px;
-    max-width: 280px;
-
-    background-color: #F5FEFF;
-    border: 2px solid #53A2B0;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.2s ease;
 }
 
 .playstation-hotspot {
@@ -345,9 +347,6 @@ blockquote {
     top: 65%;
     width: 30%;
     height: 35%;
-
-    background-color: rgba(83, 162, 176, 0.5);
-    border: 3px solid #53A2B0;
 
     clip-path: polygon(
         0% 14%,
@@ -361,20 +360,6 @@ blockquote {
 .playstation-panel {
     left: 0%;
     bottom: 35%;
-    
-    padding: 12px 18px;
-    max-width: 280px;
-
-    background-color: #F5FEFF;
-    border: 2px solid #53A2B0;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.2s ease;
 }
 
 .notebook-hotspot {
@@ -382,9 +367,6 @@ blockquote {
     top: 35%;
     width: 30%;
     height: 50%;
-
-    background-color: rgba(83, 162, 176, 0.5);
-    border: 3px solid #53A2B0;
 
     clip-path: polygon(
         15% 11%,
@@ -398,20 +380,6 @@ blockquote {
 .notebook-panel {
     left: 75%;
     bottom: 60%;
-    
-    padding: 12px 18px;
-    max-width: 280px;
-
-    background-color: #F5FEFF;
-    border: 2px solid #53A2B0;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.2s ease;
 }
 
 .photo-hotspot {
@@ -419,9 +387,6 @@ blockquote {
     top: 50%;
     width: 15%;
     height: 20%;
-
-    background-color: rgba(83, 162, 176, 0.5);
-    border: 3px solid #53A2B0;
 
     clip-path: polygon(
         30% 44%,
@@ -434,20 +399,6 @@ blockquote {
 .photo-panel {
     left: 22%;
     bottom: 43%;
-    
-    padding: 12px 18px;
-    max-width: 280px;
-
-    background-color: #F5FEFF;
-    border: 2px solid #53A2B0;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.2s ease;
 }
 
 .keyboard-hotspot {
@@ -455,9 +406,6 @@ blockquote {
     top: 67%;
     width: 35%;
     height: 25%;
-
-    background-color: rgba(83, 162, 176, 0.5);
-    border: 3px solid #53A2B0;
 
     clip-path: polygon(
         10% 11%,
@@ -470,20 +418,6 @@ blockquote {
 .keyboard-panel {
     left: 35%;
     bottom: 35%;
-    
-    padding: 12px 18px;
-    max-width: 280px;
-
-    background-color: #F5FEFF;
-    border: 2px solid #53A2B0;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.2s ease;
 }
 
 .default-panel {
@@ -513,7 +447,7 @@ blockquote {
         font-size: 22px;
         margin: 0;
     }
-    
+
     .hamburger {
         display: block;
         width: fit-content;
@@ -525,10 +459,10 @@ blockquote {
         font-size: 26px;
         line-height: 1;
 
-        color: #53A2B0;
-        background-color: #F5FEFF;
+        color: var(--color-primary);
+        background-color: var(--color-light);
 
-        border: 2px solid #53A2B0;
+        border: 2px solid var(--color-primary);
         border-radius: 8px;
 
         cursor: pointer;
@@ -544,8 +478,8 @@ blockquote {
         margin: 6px 5% 0;
         padding: 8px;
 
-        background-color: #F5FEFF;
-        border: 2px solid #53A2B0;
+        background-color: var(--color-light);
+        border: 2px solid var(--color-primary);
         border-radius: 12px;
     }
 
@@ -614,8 +548,8 @@ blockquote {
 
         padding: 12px 18px;
 
-        background-color: #F5FEFF;
-        border: 2px solid #53A2B0;
+        background-color: var(--color-light);
+        border: 2px solid var(--color-primary);
         border-radius: 10px;
 
         box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
