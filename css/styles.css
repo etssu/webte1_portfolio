@@ -29,6 +29,16 @@
     font-style: italic;
 }
 
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 body {
     margin: 0;
     background-color: #BEE7E8;
@@ -228,7 +238,7 @@ blockquote {
     position: relative;
     width: 80%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 30px auto 0;
 }
 
 .image-container img {
@@ -247,27 +257,25 @@ blockquote {
     cursor: pointer;
     transition: 0.2s ease;
 }
+.hotspot-panel::after {
+    content: "";
 
-.monitor-hotspot {
     position: absolute;
-    left: 19%;
-    top: 20%;
-    width: 47%;
-    height: 41%;
+    bottom: -10px;
+    left: 50%;
 
-    background-color: rgba(83, 162, 176, 0.5);
-    border: 3px solid var(--color-secondary);
+    width: 16px;
+    height: 16px;
 
-    clip-path: polygon(
-        2% 12%,
-        100% 9%,
-        97% 87%,
-        9% 97%
-    );
+    background-color: #F5FEFF;
+    border-right: 2px solid #53A2B0;
+    border-bottom: 2px solid #53A2B0;
+
+    transform: translateX(-50%) rotate(45deg);
 }
 
 .hotspot:hover,
-.hotspot:focus-visible {
+.hotspot:focus-visible { 
     background-color: rgb(107 185 199 / 20%);
     transform: scale(1.02);
 }
@@ -286,20 +294,282 @@ blockquote {
     opacity: 0;
     visibility: hidden;
 }
-
-.monitor-hotspot:focus + .monitor-panel {
+.hotspot:hover + .hotspot-panel {
     opacity: 1;
     visibility: visible;
 }
-.monitor-hotspot:hover {
+
+.hotspot:hover {
     opacity: 0.7;
 }
 
-.monitor-hotspot:focus + .monitor-panel {
-    opacity: 1;
+.monitor-hotspot {
+    position: absolute;
+    left: 19%;
+    top: 20%;
+    width: 47%;
+    height: 41%;
+
+    background-color: rgba(83, 162, 176, 0.5);
+    border: 3px solid #53A2B0;
+
+    clip-path: polygon(
+        2% 12%,
+        100% 9%,
+        97% 89%,
+        9% 99%
+    );
 }
 
-@media (max-width: 700px) {
+.monitor-panel {
+    left: 20%;
+    bottom: 77%;
+    
+    padding: 12px 18px;
+    max-width: 280px;
+
+    background-color: #F5FEFF;
+    border: 2px solid #53A2B0;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+.playstation-hotspot {
+    left: 0%;
+    top: 65%;
+    width: 30%;
+    height: 35%;
+
+    background-color: rgba(83, 162, 176, 0.5);
+    border: 3px solid #53A2B0;
+
+    clip-path: polygon(
+        0% 14%,
+        84% 7%,
+        94% 22%,
+        84% 88%,
+        0% 99%
+    );
+}
+
+.playstation-panel {
+    left: 0%;
+    bottom: 35%;
+    
+    padding: 12px 18px;
+    max-width: 280px;
+
+    background-color: #F5FEFF;
+    border: 2px solid #53A2B0;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+.notebook-hotspot {
+    left: 73%;
+    top: 35%;
+    width: 30%;
+    height: 50%;
+
+    background-color: rgba(83, 162, 176, 0.5);
+    border: 3px solid #53A2B0;
+
+    clip-path: polygon(
+        15% 11%,
+        90% 16%,
+        90% 99%,
+        16% 84%,
+        2% 72%
+    );
+}
+
+.notebook-panel {
+    left: 75%;
+    bottom: 60%;
+    
+    padding: 12px 18px;
+    max-width: 280px;
+
+    background-color: #F5FEFF;
+    border: 2px solid #53A2B0;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+.photo-hotspot {
+    left: 30%;
+    top: 50%;
+    width: 15%;
+    height: 20%;
+
+    background-color: rgba(83, 162, 176, 0.5);
+    border: 3px solid #53A2B0;
+
+    clip-path: polygon(
+        30% 44%,
+        63% 42%,
+        69% 84%,
+        38% 86%
+    );
+}
+
+.photo-panel {
+    left: 22%;
+    bottom: 43%;
+    
+    padding: 12px 18px;
+    max-width: 280px;
+
+    background-color: #F5FEFF;
+    border: 2px solid #53A2B0;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+.keyboard-hotspot {
+    left: 30%;
+    top: 67%;
+    width: 35%;
+    height: 25%;
+
+    background-color: rgba(83, 162, 176, 0.5);
+    border: 3px solid #53A2B0;
+
+    clip-path: polygon(
+        10% 11%,
+        73% 1%,
+        78% 30%,
+        10% 45%
+    );
+}
+
+.keyboard-panel {
+    left: 35%;
+    bottom: 35%;
+    
+    padding: 12px 18px;
+    max-width: 280px;
+
+    background-color: #F5FEFF;
+    border: 2px solid #53A2B0;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+.default-panel {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 5%;
+    }
+
+    .header-container {
+        width: 90%;
+    }
+
+    header img {
+        width: 45px;
+    }
+
+    .left {
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 22px;
+        margin: 0;
+    }
+    
+    .hamburger {
+        display: block;
+        width: fit-content;
+
+        margin: 12px 5% 0 auto;
+
+        padding: 6px 10px;
+
+        font-size: 26px;
+        line-height: 1;
+
+        color: #53A2B0;
+        background-color: #F5FEFF;
+
+        border: 2px solid #53A2B0;
+        border-radius: 8px;
+
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 5px;
+
+        margin: 6px 5% 0;
+        padding: 8px;
+
+        background-color: #F5FEFF;
+        border: 2px solid #53A2B0;
+        border-radius: 12px;
+    }
+
+    #menu-toggle:checked + .hamburger + nav {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
     #about {
         flex-direction: column;
         align-items: center;
@@ -311,5 +581,59 @@ blockquote {
 
     .about-text {
         max-width: 100%;
+    }
+
+    .hotspot-panel {
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        bottom: -110px;
+        max-width: none;
+
+        width: 100%;
+        height: 110px;
+        box-sizing: border-box;
+
+        padding: 12px 18px;
+    }
+    .hotspot-panel::after {
+        display: none;
+    }
+
+    .default-panel {
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        bottom: -110px;
+
+        width: 100%;
+        height: 110px;
+        box-sizing: border-box;
+
+        padding: 12px 18px;
+
+        background-color: #F5FEFF;
+        border: 2px solid #53A2B0;
+        border-radius: 10px;
+
+        box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
+
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* If the user selects a hotspot,
+   the default prompt is hidden */
+    .image-container:has(.hotspot:focus) .default-panel {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* A panel for the selected hotspot will appear */
+    .hotspot:focus + .hotspot-panel {
+        opacity: 1;
+        visibility: visible;
     }
 }

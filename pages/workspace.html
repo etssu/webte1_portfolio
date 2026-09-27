@@ -6,6 +6,7 @@
     <title>Pracovné prostredie</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../images/monogram-logo.svg" type="image/svg+xml">
+
 </head>
 <body>
     <header>
@@ -19,6 +20,8 @@
         </div>
     </header>
 
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
     <nav>
         <ul>
             <li><a href="../index.html">Profil</a></li>
@@ -34,10 +37,37 @@
             <img src="../images/my_setup.jpg" alt="setup photo">
                 <button class="hotspot monitor-hotspot" aria-label="Monitor"></button>
                 <span class="hotspot-panel monitor-panel">
-                    <strong>Monitor</strong>
+                    <strong>Monitor<br></strong>
                     <span>Používam ho pri programovaní, štúdiu, práci a hraní hier</span>
                 </span>
+                
+                <button class="hotspot playstation-hotspot" aria-label="PlayStation4"></button>
+                <span class="hotspot-panel playstation-panel">
+                    <strong>PlayStation 4<br></strong>
+                    <span>Používam ho na to, aby som si po náročnom dni zahrala.</span>
+                </span>
 
+                <button class="hotspot notebook-hotspot" aria-label="Notebook"></button>
+                <span class="hotspot-panel notebook-panel">
+                    <strong>Notebook<br></strong>
+                    <span>Používam ho pri práci na bakalárskej práci z oblasti počítačového videnia.</span>
+                </span>
+
+                <button class="hotspot photo-hotspot" aria-label="Photo"></button>
+                <span class="hotspot-panel photo-panel">
+                    <strong>Fotka<br></strong>
+                    <span>Používam ju ako motiváciu na ďalšie štúdium.</span>
+                </span>
+
+                <button class="hotspot keyboard-hotspot" aria-label="Keyboard"></button>
+                <span class="hotspot-panel keyboard-panel">
+                    <strong>Klávesnica<br></strong>
+                    <span>Používam ju na programovanie, písanie dokumentácie a každodennú prácu.</span>
+                </span>
+
+                <span class="default-panel">
+                Kliknite na zvýraznenú zónu a zobrazte jej popis.
+                </span>
         </div>
     </main>
 
