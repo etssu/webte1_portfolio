@@ -66,7 +66,7 @@ body {
     font-size: 18px;
 }
 
-header {
+header, footer {
     font-family: 'Nunito', Helvetica;
     font-weight: 700;
 
@@ -76,6 +76,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+footer a {
+    color: var(--color-text);
 }
 
 .header-container {
@@ -258,6 +261,7 @@ blockquote {
     width: 80%;
     max-width: 1000px;
     margin: 30px auto 0;
+    margin-bottom: 30px;
 }
 
 .image-container img {
