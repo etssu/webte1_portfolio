@@ -8,6 +8,7 @@
     --color-dark: #2D6A76;
 
     --color-light: #F5FEFF;
+    --color-light-text: #E1F4F4;
 
     --color-hotspot: rgb(83 162 176 / 50%);
     --color-hotspot-hover: rgb(107 185 199 / 20%);
@@ -131,7 +132,7 @@ nav a {
     transition: all 0.25s ease;
 }
 
-nav a:hover {
+nav a:hover{
     background-color: var(--color-background); 
     color: var(--color-text);
     text-decoration: none;
@@ -140,7 +141,7 @@ nav a:hover {
 
 nav a.active {
     background-color: var(--color-dark);
-    color: #E1F4F4;
+    color: var(--color-light-text);
 }
 
 #about {
@@ -429,6 +430,91 @@ blockquote {
 .keyboard-panel {
     left: 35%;
     bottom: 35%;
+}
+
+.schedule-title {
+    text-align: center;
+    font-size: 32px;
+}
+.table-container {
+    width: 80%;
+    margin: 0 auto 30px;
+    overflow-x: auto;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 20px 0;
+}
+.filter-button {
+    color: var(--color-text);
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    border: 2px solid var(--color-primary);
+    background-color: var(--color-light);
+    font: inherit;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-button:hover {
+    background-color: var(--color-accent);
+    box-shadow: 0px 2px 5px var(--color-text);
+}
+
+.filter-button.active {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: separate;
+    border-spacing: 3px;
+    text-align: center;
+}
+
+
+th {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.weekday {
+    background-color: var(--color-secondary);
+    font-weight: 700;
+}
+
+th,
+td {
+    border: 2px solid var(--color-dark);
+    padding: 14px 8px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+th {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.lecture {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+.seminar {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.pe {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
 }
 
 .default-panel {
