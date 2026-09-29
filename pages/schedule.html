@@ -33,7 +33,70 @@
     </nav>
     
     <main>
+        <h2>Rozvrh</h2>
 
+        <button class="filter-button" data-filter="all">Všetko</button>
+        <button class="filter-button" data-filter="lecture">Prednášky</button>
+        <button class="filter-button" data-filter="exercise">Cvičenia</button>
+
+        <table>
+            <tr>
+                <th>Deň / Čas</th>
+                <th>7:00</th>
+                <th>8:00</th>
+                <th>9:00</th>
+                <th>10:00</th>
+                <th>11:00</th>
+                <th>12:00</th>
+                <th>13:00</th>
+                <th>14:00</th>
+                <th>15:00</th>
+                <th>16:00</th>
+                <th>17:00</th>
+                <th>18:00</th>
+                <th>19:00</th>
+                <th>20:00</th>
+            </tr>
+            <tr>
+                <td class="weekday">Pondelok</td>
+                <td colspan="2"></td>
+                <td colspan="2" class="seminar">Operačné systémy<br>cpu-a</td>
+                <td colspan="2" class="seminar">Webové technológie 1<br>c137</td>
+                <td colspan="8" class="free"></td>
+            </tr>
+            <tr>
+                <td class="weekday">Utorok</td>
+                <td class="free"></td>
+                <td colspan="2" class="lecture">Analýza a zložitosť algoritmov<br>de300</td>
+                <td colspan="2" class="lecture">Webové technológie 1<br>cd150</td>
+                <td colspan="3" class="free"></td>
+                <td colspan="2" class="lecture">Softvérové inžinierstvo<br>cd300</td>
+                <td class="seminar">Softvérové inžinierstvo<br>cd300</td>
+                <td colspan="3" class="free"></td>
+            </tr>
+            <tr>
+                <td class="weekday">Streda</td>
+                <td class="free"></td>
+                <td colspan="2" class="lecture">Operačné systémy<br>de300</td>
+                <td colspan="2" class="lecture">Analýza a zložitosť algoritmov<br>bc150</td>
+                <td class="free"></td>
+                <td colspan="2" class="lecture">Webové technológie 1<br>cd150</td>
+                <td colspan="6" class="free"></td>
+            </tr>
+            <tr>
+                <td class="weekday">Štvrtok</td>
+                <td colspan="3" class="free"></td>
+                <td class="seminar">Softvérové inžinierstvo<br>c137</td>
+                <td colspan="2" class="pe">Telesná kultúra 5<br>pos</td>
+                <td class="seminar">Bakalársky Projekt</td>
+                <td colspan="7" class="free"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="free"></td>
+                <td class="seminar">Analýza a zložitosť algoritmov<br>cd150</td>
+                <td colspan="11" class="free"></td>
+            </tr>
+        </table>
     </main>
 
     <footer>
