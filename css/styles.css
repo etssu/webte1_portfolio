@@ -10,12 +10,15 @@
     --color-light: #F5FEFF;
     --color-light-text: #E1F4F4;
 
+    --color-border: #72AEB3;
+    --color-table-even: #9FC7CA;
+    --color-table-odd: #B3DEE0;
+
     --color-hotspot: rgb(83 162 176 / 50%);
     --color-hotspot-hover: rgb(107 185 199 / 20%);
 
     --radius: 15px;
     --radius-image: 20px;
-    --space: 20px;
 }
 
 @font-face {
@@ -60,12 +63,12 @@
 }
 
 body {
-    margin: 0;
-    background-color: var(--color-background);
     font-family: 'Nunito', Helvetica;
     font-weight: 500;
     font-size: 18px;
 
+    margin: 0;
+    background-color: var(--color-background);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -75,7 +78,6 @@ main {
 }
 
 header, footer {
-    font-family: 'Nunito', Helvetica;
     font-weight: 700;
 
     background-color: var(--color-secondary);
@@ -172,7 +174,6 @@ blockquote {
     margin: 25px 0;
 
     background-color: var(--color-accent);
-    font-family: 'Nunito', Helvetica;
     font-style: italic;
 }
 
@@ -264,12 +265,16 @@ blockquote {
     background-color: var(--color-primary);
 }
 
+.workspace {
+    text-align: center;
+    font-size: 34px;
+}
+
 .image-container {
     position: relative;
     width: 80%;
     max-width: 1000px;
-    margin: 30px auto 0;
-    margin-bottom: 30px;
+    margin: 30px auto;
 }
 
 .image-container img {
@@ -436,6 +441,25 @@ blockquote {
     text-align: center;
     font-size: 32px;
 }
+
+#schedule-message {
+    margin: 0 auto 20px;
+    padding: 12px 18px;
+    max-width: 700px;
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+
+    color: var(--color-dark);
+    background-color: var(--color-light);
+
+    border: 1px solid var(--color-accent);
+    border-radius: 12px;
+
+    box-shadow: 0 3px 10px rgba(45, 106, 118, 0.12);
+}
+
 .table-container {
     width: 80%;
     margin: 0 auto 30px;
@@ -473,11 +497,17 @@ blockquote {
 table {
     width: 100%;
     min-width: 900px;
-    border-collapse: separate;
-    border-spacing: 3px;
+    border-collapse: collapse;
     text-align: center;
 }
 
+tr:nth-of-type(even) { 
+    background-color: var(--color-table-even);
+}
+
+tr:nth-of-type(odd) {
+    background-color: var(--color-table-odd);
+}
 
 th {
     background-color: var(--color-dark);
@@ -490,16 +520,20 @@ th {
 }
 
 th,
-td {
-    border: 2px solid var(--color-dark);
+tr {
+    border: 2px solid var(--color-border);
     padding: 14px 8px;
     text-align: center;
-    border-radius: 10px;
 }
 
-th {
-    background-color: var(--color-dark);
-    color: var(--color-light);
+td {
+    padding: 14px 8px;
+    
+}
+
+.lecture + .lecture,
+.seminar + .seminar {
+    border-left: 1px solid var(--color-border);
 }
 
 .lecture {
@@ -515,6 +549,42 @@ th {
 .pe {
     background-color: var(--color-secondary);
     color: var(--color-text);
+}
+
+.current-lesson {
+    outline: 2px solid rgba(250, 101, 178, 0.56);
+    outline-offset: -2px;
+    box-shadow: 0 0 10px 3px rgba(189, 91, 141, 0.6);
+}
+
+#progress-text {
+    margin: 0 0 8px;
+    text-align: center;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.progress-container {
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+.progress-bar {
+    height: 14px;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-accent);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(45, 106, 118, 0.15);
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0;
+    background-color: var(--color-primary);
+    border-radius: 20px;
+    box-shadow: 0 0 8px rgba(83, 162, 176, 0.45);
+    transition: width 0.6s ease;
 }
 
 .default-panel {

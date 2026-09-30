@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pracovné prostredie</title>
+    <title>Rozvrh</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../images/monogram-logo.svg" type="image/svg+xml">
     
@@ -35,7 +35,8 @@
     <main>
         <h2 class="schedule-title">Rozvrh</h2>
 
-        
+        <p id="schedule-message"></p>
+
         <div class="table-container">
 
             <div class="filters">
@@ -63,48 +64,55 @@
                     <th>20:00</th>
                 </tr>
                 <tbody>
-                    <tr>
+                    <tr class="odd">
                         <td class="weekday">Pondelok</td>
                         <td colspan="2"></td>
-                        <td colspan="2" class="seminar">Operačné systémy<br>cpu-a</td>
-                        <td colspan="2" class="seminar">Webové technológie 1<br>c137</td>
+                        <td colspan="2" class="seminar" data-day=1 data-start="9" data-end="11">Operačné systémy<br>cpu-a</td>
+                        <td colspan="2" class="seminar" data-day=1 data-start="11" data-end="13">Webové technológie 1<br>c137</td>
                         <td colspan="8" class="free"></td>
                     </tr>
-                    <tr>
+                    <tr class="even">
                         <td class="weekday">Utorok</td>
                         <td class="free"></td>
-                        <td colspan="2" class="lecture">Analýza a zložitosť algoritmov<br>de300</td>
-                        <td colspan="2" class="lecture">Webové technológie 1<br>cd150</td>
+                        <td colspan="2" class="lecture" data-day=2 data-start="8" data-end="10">Analýza a zložitosť algoritmov<br>de300</td>
+                        <td colspan="2" class="lecture" data-day=2 data-start="10" data-end="12">Webové technológie 1<br>cd150</td>
                         <td colspan="3" class="free"></td>
-                        <td colspan="2" class="lecture">Softvérové inžinierstvo<br>cd300</td>
-                        <td class="seminar">Softvérové inžinierstvo<br>cd300</td>
+                        <td colspan="2" class="lecture" data-day=2 data-start="15" data-end="17">Softvérové inžinierstvo<br>cd300</td>
+                        <td class="seminar" data-day=2 data-start="17" data-end="18">Softvérové inžinierstvo<br>cd300</td>
                         <td colspan="3" class="free"></td>
                     </tr>
-                    <tr>
+                    <tr class="odd">
                         <td class="weekday">Streda</td>
                         <td class="free"></td>
-                        <td colspan="2" class="lecture">Operačné systémy<br>de300</td>
-                        <td colspan="2" class="lecture">Analýza a zložitosť algoritmov<br>bc150</td>
+                        <td colspan="2" class="lecture" data-day=3 data-start="8" data-end="10">Operačné systémy<br>de300</td>
+                        <td colspan="2" class="lecture" data-day=3 data-start="10" data-end="12">Analýza a zložitosť algoritmov<br>bc150</td>
                         <td class="free"></td>
-                        <td colspan="2" class="lecture">Webové technológie 1<br>cd150</td>
+                        <td colspan="2" class="lecture" data-day=3 data-start="13" data-end="15">Webové technológie 1<br>cd150</td>
                         <td colspan="6" class="free"></td>
                     </tr>
-                    <tr>
+                    <tr class="even">
                         <td class="weekday">Štvrtok</td>
                         <td colspan="3" class="free"></td>
-                        <td class="seminar">Softvérové inžinierstvo<br>c137</td>
-                        <td colspan="2" class="seminar pe">Telesná kultúra 5<br>pos</td>
-                        <td class="seminar">Bakalársky Projekt</td>
+                        <td class="seminar" data-day=4 data-start="10" data-end="11">Softvérové inžinierstvo<br>c137</td>
+                        <td colspan="2" class="seminar pe" data-day=4 data-start="11" data-end="13">Telesná kultúra 5<br>pos</td>
+                        <td class="seminar" data-day=4 data-start="13" data-end="14">Bakalársky Projekt</td>
                         <td colspan="7" class="free"></td>
                     </tr>
-                    <tr>
+                    <tr class="odd">
                         <td class="weekday">Piatok</td>
                         <td colspan="2" class="free"></td>
-                        <td class="seminar">Analýza a zložitosť algoritmov<br>cd150</td>
+                        <td class="seminar" data-day=5 data-start="9" data-end="10">Analýza a zložitosť algoritmov<br>cd150</td>
                         <td colspan="11" class="free"></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <p id="progress-text"></p>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
         </div>
     </main>
 
