@@ -437,7 +437,14 @@ blockquote {
     bottom: 35%;
 }
 
-.schedule-title {
+.default-panel {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.schedule-title,
+.map-title {
     text-align: center;
     font-size: 32px;
 }
@@ -587,15 +594,94 @@ td {
     transition: width 0.6s ease;
 }
 
-.default-panel {
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
+#map {
+    height: 500px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 3px solid var(--color-primary);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(45, 106, 118, 0.2);
+    overflow: hidden;
+}
+
+.map-sources {
+    margin: 30px auto;
+    padding: 8px 14px;
+    width: fit-content;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    background-color: var(--color-light);
+    border-radius: 10px;
+}
+
+.map-sources a {
+    color: var(--color-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.map-sources a:hover {
+    text-decoration: underline;
+}
+
+.map-panel {
+    max-width: 900px;
+    margin: 0 auto 20px;
+}
+
+.map-panel h2 {
+    text-align: center;
+}
+
+#map-instruction {
+    margin: 0 0 15px;
+    padding: 10px 14px;
+    background: rgba(245, 254, 255, 0.7);
+    border: 1px solid rgba(83, 162, 176, 0.35);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    backdrop-filter: blur(6px);
+}
+
+#calculate-route {
+    padding: 10px 16px;
+    border: 1px solid rgba(45, 106, 118, 0.4);
+    border-radius: 10px;
+    background: rgba(83, 162, 176, 0.75);
+    color: white;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#calculate-route:hover {
+    background: rgba(45, 106, 118, 0.9);
+    transform: translateY(-1px);
+}
+
+#calculate-route:active {
+    transform: translateY(0);
+}
+
+.route-controls select {
+    padding: 9px 12px;
+    border: 1px solid rgba(83, 162, 176, 0.4);
+    border-radius: 9px;
+    background: rgba(245, 254, 255, 0.75);
+    color: var(--color-text);
+    font-family: inherit;
 }
 
 @media (max-width: 768px) {
     header {
         padding: 10px 5%;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .header-container {
@@ -736,5 +822,19 @@ td {
     .hotspot:focus + .hotspot-panel {
         opacity: 1;
         visibility: visible;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+    .route-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .route-controls select,
+    #calculate-route {
+        width: 100%;
     }
 }
