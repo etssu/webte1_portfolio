@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --color-primary: #53A2B0;
     --color-secondary: #6BB9C7;
@@ -19,6 +23,15 @@
 
     --radius: 15px;
     --radius-image: 20px;
+
+    --space: 12px;
+    --panel-height-mobile: 110px;
+
+    --color-dark-background: #17282C;
+    --color-dark-surface: #20383D;
+    --color-dark-surface-light: #29474D;
+    --color-dark-text: #F1FFFF;
+    --color-dark-primary: #8ED8E3;
 }
 
 @font-face {
@@ -48,6 +61,26 @@
     font-style: italic;
 }
 
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    padding: 10px 15px;
+    background: var(--color-dark);
+    color: white;
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+.skip-link:focus-visible {
+    top: 10px;
+}
+
+:focus-visible {
+    outline: 3px solid #D81B60;
+    outline-offset: 3px;
+}
+
 #menu-toggle {
     display: none;
 }
@@ -67,6 +100,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    color: var(--color-text);
 }
 
 main {
@@ -123,7 +157,7 @@ nav ul {
 nav a {
     color: var(--color-text);
     text-decoration: none;
-    padding: 6px 12px;
+    padding: 6px var(--space);
     border-radius: var(--radius);
     transition: all 0.25s ease;
 }
@@ -135,9 +169,10 @@ nav a:hover {
     box-shadow: 0 2px 5px var(--color-text);
 }
 
-nav a.active {
+nav a.active,
+.filter-button.active {
     background-color: var(--color-dark);
-    color: var(--color-light-text);
+    color: var(--color-light);
 }
 
 /* main page */
@@ -186,7 +221,7 @@ blockquote {
 }
 
 .cv-right {
-    background-color: #E8F7F7;
+    background-color: var(--color-light);
     padding: 35px 45px;
 }
 
@@ -207,7 +242,7 @@ blockquote {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: var(--space);
     font-style: normal;
 }
 
@@ -303,7 +338,7 @@ blockquote {
 
 .hotspot-panel {
     position: absolute;
-    padding: 12px 18px;
+    padding: var(--space) 18px;
     max-width: 280px;
     background-color: var(--color-light);
     border: 2px solid var(--color-primary);
@@ -399,7 +434,7 @@ blockquote {
 
 #schedule-message {
     margin: 0 auto 20px;
-    padding: 12px 18px;
+    padding: var(--space) 18px;
     max-width: 700px;
     text-align: center;
     font-size: 1rem;
@@ -407,7 +442,7 @@ blockquote {
     color: var(--color-dark);
     background-color: var(--color-light);
     border: 1px solid var(--color-accent);
-    border-radius: 12px;
+    border-radius: var(--radius);
     box-shadow: 0 3px 10px rgba(45, 106, 118, 0.12);
 }
 
@@ -426,24 +461,27 @@ blockquote {
 }
 
 button {
-    color: var(--color-text);
-    padding: 6px 12px;
+    padding: var(--space) 20px;
+    border: 1px solid rgba(45, 106, 118, 0.4);
     border-radius: var(--radius);
-    border: 2px solid var(--color-primary);
-    background-color: var(--color-light);
-    font: inherit;
+    background:  var(--color-light);
+    color: var(--color-text);
+    font-family: inherit;
+    font-weight: bold;
+    font-size:medium;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: 0.2s;
 }
 
 button:hover {
     background-color: var(--color-accent);
-    box-shadow: 0 2px 5px var(--color-text);
+    color: var(--color-text);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(45, 106, 118, 0.25);
 }
 
-.filter-button.active {
-    background-color: var(--color-dark);
-    color: var(--color-light);
+button:active {
+    transform: translateY(0);
 }
 
 table {
@@ -524,7 +562,7 @@ td {
     height: 14px;
     background-color: var(--color-background);
     border: 1px solid var(--color-accent);
-    border-radius: 20px;
+    border-radius: var(--radius);
     overflow: hidden;
     box-shadow: inset 0 1px 3px rgba(45, 106, 118, 0.15);
 }
@@ -533,7 +571,7 @@ td {
     height: 100%;
     width: 0;
     background-color: var(--color-primary);
-    border-radius: 20px;
+    border-radius: var(--radius);
     box-shadow: 0 0 8px rgba(83, 162, 176, 0.45);
     transition: width 0.6s ease;
 }
@@ -545,7 +583,7 @@ td {
     max-width: 1100px;
     margin: 0 auto;
     border: 3px solid var(--color-primary);
-    border-radius: 16px;
+    border-radius: var(--radius);
     box-shadow: 0 6px 18px rgba(45, 106, 118, 0.2);
     overflow: hidden;
 }
@@ -553,12 +591,12 @@ td {
 .map-sources {
     margin: 30px auto;
     padding: 8px 14px;
-    width: fit-content;
+    max-width: 90%;
     text-align: center;
     font-size: 0.85rem;
     color: var(--color-text);
     background-color: var(--color-light);
-    border-radius: 10px;
+    border-radius: var(--radius);
 }
 
 .map-sources a {
@@ -583,50 +621,79 @@ td {
 #map-instruction {
     margin: 0 0 15px;
     padding: 10px 14px;
-    background: rgba(245, 254, 255, 0.7);
-    border: 1px solid rgba(83, 162, 176, 0.35);
+    background: var(--color-light);
+    border: 1px solid var(--color-border);
     border-left: 4px solid var(--color-primary);
-    border-radius: 10px;
+    border-radius: var(--radius);
     font-size: 0.95rem;
     line-height: 1.5;
     backdrop-filter: blur(6px);
 }
 
-#calculate-route {
-    padding: 10px 16px;
-    border: 1px solid rgba(45, 106, 118, 0.4);
-    border-radius: 10px;
-    background: rgba(83, 162, 176, 0.75);
-    color: white;
-    font-family: inherit;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#calculate-route:hover {
-    background: rgba(45, 106, 118, 0.9);
-    transform: translateY(-1px);
-}
-
-#calculate-route:active {
-    transform: translateY(0);
-}
-
 .route-controls select {
-    padding: 9px 12px;
-    border: 1px solid rgba(83, 162, 176, 0.4);
-    border-radius: 9px;
-    background: rgba(245, 254, 255, 0.75);
+    background: var(--color-light);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    padding: 9px var(--space);
+    border-radius: var(--radius);
     color: var(--color-text);
     font-family: inherit;
 }
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #FFFFFF;
+        --color-background: #17282C;
 
+        --color-secondary: #29474D;
+        --color-primary: #397D88;
+        --color-accent: #3F7379;
+        --color-dark: #8ED8E3;
+
+        --color-light: #20383D;
+        --color-light-text: #FFFFFF;
+
+        --color-border: #5F9DA5;
+        --color-table-even: #20383D;
+        --color-table-odd: #29474D;
+
+        --color-hotspot: rgb(83 162 176 / 50%);
+        --color-hotspot-hover: rgb(107 185 199 / 30%);
+    }
+
+    .weekday {
+        background-color: #163136;
+    }
+
+    .lecture,
+    .seminar,
+    .pe,
+    .weekday {
+        color: #FFFFFF;
+    }
+}
+
+
+/* reduce animations for users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* for phone users */
 @media (max-width: 768px) {
     header {
         padding: 10px 5%;
         flex-wrap: wrap;
         gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .header-container {
@@ -656,7 +723,7 @@ td {
         color: var(--color-primary);
         background-color: var(--color-light);
         border: 2px solid var(--color-primary);
-        border-radius: 8px;
+        border-radius: var(--radius);
     }
 
     nav {
@@ -668,7 +735,7 @@ td {
         padding: 8px;
         background-color: var(--color-light);
         border: 2px solid var(--color-primary);
-        border-radius: 12px;
+        border-radius: var(--radius);
     }
 
     #menu-toggle:checked + .hamburger + nav {
@@ -709,12 +776,12 @@ td {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -110px;
+        bottom: calc(-1 * var(--panel-height-mobile));
         max-width: none;
         width: 100%;
-        height: 110px;
+        height: var(--panel-height-mobile);
         box-sizing: border-box;
-        padding: 12px 18px;
+        padding: var(--space) 18px;
     }
 
     .hotspot-panel::after {
@@ -724,14 +791,14 @@ td {
     .default-panel {
         left: 0;
         right: 0;
-        bottom: -110px;
+        bottom: calc(-1 * var(--panel-height-mobile));
         width: 100%;
-        height: 110px;
+        height: var(--panel-height-mobile);
         box-sizing: border-box;
-        padding: 12px 18px;
+        padding: var(--space) 18px;
         background-color: var(--color-light);
         border: 2px solid var(--color-primary);
-        border-radius: 10px;
+        border-radius: var(--radius);
         box-shadow: 0 4px 12px rgba(31, 29, 54, 0.15);
         opacity: 1;
         visibility: visible;

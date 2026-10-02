@@ -2,17 +2,26 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Zobrazujem svoj rozvrh a informácie o tom, kedy ma môžete zastihnúť.">
+
+    <meta property="og:title" content="Kedy ma zastihnete">
+    <meta property="og:description" content="Zobrazujem svoj rozvrh a informácie o tom, kedy ma môžete zastihnúť.">
+    <meta property="og:image" content="../favicon.png">
+
     <title>Rozvrh</title>
+
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" href="../images/monogram-logo.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.png">
     
 </head>
 <body>
+    <a href="#main" class="skip-link">Preskočiť na obsah</a>
+    
     <header>
         <div class="header-container">
             <div class="left">
-                <img src="../images/monogram-logo.svg" alt="monogram-logo">
+                <img src="../images/monogram-logo.svg" alt="Monogram s iniciálami RB">
                 <h1>Romina Bediak</h1>
             </div>
             
@@ -32,7 +41,7 @@
         </ul>
     </nav>
     
-    <main>
+    <main id="main">
         <h2 class="schedule-title">Rozvrh</h2>
 
         <p id="schedule-message"></p>

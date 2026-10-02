@@ -2,18 +2,27 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Zobrazujem interaktívnu mapu miest, ktoré súvisia s mojím štúdiom a bývaním.">
+
+    <meta property="og:title" content="Kde ma nájdete">
+    <meta property="og:description" content="Zobrazujem interaktívnu mapu miest, ktoré súvisia s mojím štúdiom a bývaním.">
+    <meta property="og:image" content="../favicon.png">
+
+    <title>Kde ma nájdete</title>
+
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" href="../images/monogram-logo.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
 </head>
 <body>
+    <a href="#main" class="skip-link">Preskočiť na obsah</a>
+    
     <header>
         <div class="header-container">
             <div class="left">
-                <img src="../images/monogram-logo.svg" alt="monogram-logo">
+                <img src="../images/monogram-logo.svg" alt="Monogram s iniciálami RB">
                 <h1>Romina Bediak</h1>
             </div>
             
@@ -34,7 +43,7 @@
         </ul>
     </nav>
 
-    <main>
+    <main id="main">
         <section class="map-page">
             
             <div class="map-panel">

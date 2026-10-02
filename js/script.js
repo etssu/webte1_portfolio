@@ -203,7 +203,7 @@ if (mapElement) {
         placeMarkers[index] = marker;
     }
 
-    
+
     function deletePlace(index) {
         placeMarkers.forEach(marker => map.removeLayer(marker));
 
@@ -253,16 +253,21 @@ if (mapElement) {
 
 
     function showPlaces() {
-        const placesList = document.getElementById("places-list");
+    const placesList = document.getElementById("places-list");
 
-        placesList.innerHTML = ""; // clear the places list
+    placesList.innerHTML = ""; // clear the places list
 
-        places.forEach(place => { // fill the places list
-            const li = document.createElement("li");
-            li.textContent = place.name;
-            placesList.appendChild(li);
-        });
+    if (places.length === 0) {
+        placesList.textContent = "Zatiaľ neboli pridané žiadne miesta.";
+        return;
     }
+
+    places.forEach(place => { // fill the places list
+        const li = document.createElement("li");
+        li.textContent = place.name;
+        placesList.appendChild(li);
+    });
+}
 
     function updatePlaceSelect() {
         const select = document.getElementById("place-select");
