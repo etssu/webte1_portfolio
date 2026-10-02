@@ -7,4 +7,9 @@
     .cv-right {
         background: none;
     }
+
+    /* keep the CV on one printed page */
+    .cv {
+        page-break-inside: avoid;
+    }
 }

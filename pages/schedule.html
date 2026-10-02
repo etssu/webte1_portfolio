@@ -44,34 +44,38 @@
                 <button class="filter-button" onclick="showLessons('lecture')">Prednášky</button>
                 <button class="filter-button" onclick="showLessons('seminar')">Cvičenia</button>
             </div>
+            <p id="filter-message"></p>
             
             <table>
-                <tr>
-                    <th>Deň / Čas</th>
-                    <th>7:00</th>
-                    <th>8:00</th>
-                    <th>9:00</th>
-                    <th>10:00</th>
-                    <th>11:00</th>
-                    <th>12:00</th>
-                    <th>13:00</th>
-                    <th>14:00</th>
-                    <th>15:00</th>
-                    <th>16:00</th>
-                    <th>17:00</th>
-                    <th>18:00</th>
-                    <th>19:00</th>
-                    <th>20:00</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Deň / Čas</th>
+                        <th>7:00</th>
+                        <th>8:00</th>
+                        <th>9:00</th>
+                        <th>10:00</th>
+                        <th>11:00</th>
+                        <th>12:00</th>
+                        <th>13:00</th>
+                        <th>14:00</th>
+                        <th>15:00</th>
+                        <th>16:00</th>
+                        <th>17:00</th>
+                        <th>18:00</th>
+                        <th>19:00</th>
+                        <th>20:00</th>
+                    </tr>
+                </thead>
+
                 <tbody>
-                    <tr class="odd">
+                    <tr>
                         <td class="weekday">Pondelok</td>
                         <td colspan="2"></td>
                         <td colspan="2" class="seminar" data-day=1 data-start="9" data-end="11">Operačné systémy<br>cpu-a</td>
                         <td colspan="2" class="seminar" data-day=1 data-start="11" data-end="13">Webové technológie 1<br>c137</td>
                         <td colspan="8" class="free"></td>
                     </tr>
-                    <tr class="even">
+                    <tr>
                         <td class="weekday">Utorok</td>
                         <td class="free"></td>
                         <td colspan="2" class="lecture" data-day=2 data-start="8" data-end="10">Analýza a zložitosť algoritmov<br>de300</td>
@@ -81,7 +85,7 @@
                         <td class="seminar" data-day=2 data-start="17" data-end="18">Softvérové inžinierstvo<br>cd300</td>
                         <td colspan="3" class="free"></td>
                     </tr>
-                    <tr class="odd">
+                    <tr>
                         <td class="weekday">Streda</td>
                         <td class="free"></td>
                         <td colspan="2" class="lecture" data-day=3 data-start="8" data-end="10">Operačné systémy<br>de300</td>
@@ -90,7 +94,7 @@
                         <td colspan="2" class="lecture" data-day=3 data-start="13" data-end="15">Webové technológie 1<br>cd150</td>
                         <td colspan="6" class="free"></td>
                     </tr>
-                    <tr class="even">
+                    <tr>
                         <td class="weekday">Štvrtok</td>
                         <td colspan="3" class="free"></td>
                         <td class="seminar" data-day=4 data-start="10" data-end="11">Softvérové inžinierstvo<br>c137</td>
@@ -98,7 +102,7 @@
                         <td class="seminar" data-day=4 data-start="13" data-end="14">Bakalársky Projekt</td>
                         <td colspan="7" class="free"></td>
                     </tr>
-                    <tr class="odd">
+                    <tr>
                         <td class="weekday">Piatok</td>
                         <td colspan="2" class="free"></td>
                         <td class="seminar" data-day=5 data-start="9" data-end="10">Analýza a zložitosť algoritmov<br>cd150</td>
@@ -122,6 +126,11 @@
         </address>
 
         <p>&copy; 2026 Romina Bediak</p>
+
+        <p>
+            Zdroje:
+            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+        </p>
 
     </footer>
     <script src="../js/script.js"></script>
