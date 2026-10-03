@@ -28,10 +28,11 @@
         </div>
     </header>
 
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger">☰</label>
+    <button class="hamburger" id="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+        ☰
+    </button>
     
-    <nav>
+    <nav id="main-nav">
         <ul>
             <li><a href="index.html" class="active">Profil</a></li>
             <li><a href="pages/cv.html">Životopis</a></li>
@@ -89,5 +90,6 @@
         </p>
 
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

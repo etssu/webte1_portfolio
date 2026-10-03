@@ -4,6 +4,17 @@ const END_SEMESTER = new Date(2026, 11, 12); // 12.12.2026
 const weekdays = ["nedeľu", "pondelok", "utorok", "stredu", "štvrtok", "piatok"];
 const lessonSelector = ".lecture, .seminar, .pe";
 
+
+const menuToggle = document.getElementById("menu-toggle");
+const mainNav = document.getElementById("main-nav");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+
+    menuToggle.setAttribute("aria-expanded", !isOpen);
+    mainNav.style.display = isOpen ? "none" : "flex";
+});
+
 // calculate semester progress
 function semesterProgress() {
     const today = new Date();

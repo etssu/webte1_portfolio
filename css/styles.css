@@ -81,10 +81,6 @@
     outline-offset: 3px;
 }
 
-#menu-toggle {
-    display: none;
-}
-
 .hamburger {
     display: none;
     font-size: 30px;
@@ -738,10 +734,6 @@ td {
         border-radius: var(--radius);
     }
 
-    #menu-toggle:checked + .hamburger + nav {
-        display: flex;
-    }
-
     nav ul {
         flex-direction: column;
         align-items: stretch;
@@ -770,6 +762,10 @@ td {
 
     .about-text {
         max-width: 100%;
+    }
+
+    .image-container {
+        margin-bottom: calc(30px + var(--panel-height-mobile));
     }
 
     .hotspot-panel {
