@@ -1,6 +1,7 @@
 # Portfolio
 
 **Meno:** Romina Bediak
+
 **Krúžok:** pondelok 11:00
 
 **Webová stránka:** [odkaz](https://webte1.fei.stuba.sk/~xbediak/index.html)
