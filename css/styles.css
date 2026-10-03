@@ -249,6 +249,9 @@ blockquote {
     color: var(--color-text);
     text-decoration: none;
 }
+.cv-left address a:hover {
+    text-decoration: underline;
+}
 
 .cv-left a {
     color: var(--color-text);
