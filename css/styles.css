@@ -20,6 +20,7 @@
 
     --color-hotspot: rgb(83 162 176 / 50%);
     --color-hotspot-hover: rgb(107 185 199 / 20%);
+    --color-shadow: rgba(45, 106, 118, 0.25);
 
     --radius: 15px;
     --radius-image: 20px;
@@ -348,7 +349,8 @@ blockquote {
     transition: opacity 0.2s ease;
 }
 
-.hotspot:hover + .hotspot-panel {
+.hotspot:hover + .hotspot-panel,
+.hotspot:focus + .hotspot-panel {
     opacity: 1;
     visibility: visible;
 }
@@ -442,7 +444,7 @@ blockquote {
     background-color: var(--color-light);
     border: 1px solid var(--color-accent);
     border-radius: var(--radius);
-    box-shadow: 0 3px 10px rgba(45, 106, 118, 0.12);
+    box-shadow: 0 3px 10px var(--color-shadow);
 }
 
 .table-container {
@@ -461,7 +463,7 @@ blockquote {
 
 button {
     padding: var(--space) 20px;
-    border: 1px solid rgba(45, 106, 118, 0.4);
+    border: 1px solid var(--color-shadow);
     border-radius: var(--radius);
     background:  var(--color-light);
     color: var(--color-text);
@@ -476,7 +478,7 @@ button:hover {
     background-color: var(--color-accent);
     color: var(--color-text);
     transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(45, 106, 118, 0.25);
+    box-shadow: 0 2px 5px var(--color-shadow);
 }
 
 button:active {
@@ -563,7 +565,7 @@ td {
     border: 1px solid var(--color-accent);
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: inset 0 1px 3px rgba(45, 106, 118, 0.15);
+    box-shadow: inset 0 1px 3px var(--color-shadow);
 }
 
 #progress-fill {
@@ -583,7 +585,7 @@ td {
     margin: 0 auto;
     border: 3px solid var(--color-primary);
     border-radius: var(--radius);
-    box-shadow: 0 6px 18px rgba(45, 106, 118, 0.2);
+    box-shadow: 0 6px 18px var(--color-shadow);
     overflow: hidden;
 }
 
@@ -635,7 +637,6 @@ td {
     border: 1px solid var(--color-border);
     padding: 9px var(--space);
     border-radius: var(--radius);
-    color: var(--color-text);
     font-family: inherit;
 }
 /* dark mode */

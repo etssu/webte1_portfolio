@@ -216,6 +216,11 @@ if (mapElement) {
 
 
     function deletePlace(index) {
+        if (routeLine != null) {
+            map.removeLayer(routeLine);
+            routeLine = null;
+        }
+
         placeMarkers.forEach(marker => map.removeLayer(marker));
 
         // remove selected place from the list
