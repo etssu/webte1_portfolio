@@ -4,7 +4,7 @@
 
 **Krúžok:** pondelok 11:00
 
-**Webová stránka:** [odkaz](https://webte1.fei.stuba.sk/~xbediak/index.html)
+**Webová stránka:** [odkaz](https://webte1.fei.stuba.sk/~xbediak/index.html](https://webte1.fei.stuba.sk/~xbediak/Z1_Bediak/)
 
 ## O projekte
 
